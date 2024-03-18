@@ -34,9 +34,11 @@
 ##' @param file path string for the files
 ##' @return Boolean for existense of the files
 ##' @author Dilip G
-.checkFile <- function(file) {
-  if (!file.exists(file)) {
-    stop(file, " file does not exist in the given directory. Please fix the path")
+.checkFiles <- function(file) {
+  for (eachfile in c(file)) {
+    if (!file.exists(eachfile)) {
+      stop(eachfile, " file does not exist in the given directory. Please fix the path")
+    }
   }
   return(TRUE)
 }
