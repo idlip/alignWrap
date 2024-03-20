@@ -18,6 +18,7 @@
         buildInputs = builtins.attrValues {
           inherit (pkgs)
             R
+            bwa bowtie2 minimap2 star
             ;
           inherit (pkgs.rPackages)
             lintr
