@@ -1,0 +1,12 @@
+Package: alignWrap
+Title: Wrapper Package for Alignment Tools
+Version: 0.1
+Authors@R:
+    person("Dilip", "G", , "igoldlip@gmail.com", role = c("aut", "cre"),
+           comment = c())
+Description: alignWrap is a package which has wrapper functions to use alignment packages such as 'bwa', 'bowtie2', 'STAR' & 'minimap2'. It basically gives a convenient function to call those CLI tools and give the std output. Helpful to handle the sequencing workflow with R in a uniform way.
+License: `use_mit_license()`
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
