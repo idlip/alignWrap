@@ -6,8 +6,9 @@
 ##' In unix system, you can refer 'man which'
 ##' @title binary command checker
 ##' @param bin string indicating the executable command
-##' @return
+##' @return Boolean to check whether an executable command is available or not
 ##' @author Dilip G
+##' @export
 .checkBin <- function(bin) {
   rep <- Sys.which(bin)
   if (rep == "") {
@@ -22,9 +23,11 @@
 ##' @param args arguments passed to the command
 ##' @return error if command is not found, else output log of the command run
 ##' @author Dilip G
+##' @export
 .execBin <- function(bin, args) {
-  .checkBin(bin)
-  output <- system2(bin, args)
+  cliword <- unlist(strsplit(bin, " "))
+  .checkBin(cliword[1])
+  output <- system2(cliword[1], c(cliword[2], args))
   return(output)
 }
 
@@ -34,6 +37,7 @@
 ##' @param file path string for the files
 ##' @return Boolean for existense of the files
 ##' @author Dilip G
+##' @export
 .checkFiles <- function(file) {
   for (eachfile in c(file)) {
     if (!file.exists(eachfile)) {
@@ -51,8 +55,9 @@
 ##' @examples
 ##' .extGz("human-refseq.fna.gz")
 ##' @author Dilip G
+##' @export
 .extGz <- function(file) {
-  if (.checkFile(file) && length(grep("*.gz", file))) {
+  if (.checkFiles(file) && length(grep("*.gz", file))) {
     .execBin("gunzip", c("-k", file))
   }
 }
