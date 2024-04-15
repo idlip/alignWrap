@@ -1,0 +1,4 @@
+^LICENSE\.md$
+^flake*
+Readme.org
+.envrc
