@@ -1,0 +1,33 @@
+#+title: alignWrap: An R wrapper for short read aligners
+#+author: Dilip G
+#+language: En
+
+
+#+begin_html
+<p align="center">
+<a href="https://github.com/idlip/alignWrap"><img src="https://img.shields.io/badge/alignWrap_0.1-royalpurple?style=for-the-badge&labelColor=black"></a>
+</p>
+
+<h1 align="center">alignWrap</h1>
+#+end_html
+
+This R package lets you call short read aligner tools from the programming and convenience of R console.
+
+The aim of this package would be give programmatic access, and make the sequencing data analysis workflow uniform.
+
+The R functions are asynchronous, it won't clutter your R command line.
+
+** Usage
+- Depending on tools, functions are self defined.
+
+*** bwa - Burrows wheeler transform algorithm
+-
+#+begin_src R
+bwaIndex()
+#+end_src
+
+** Improvements
+- There are lot of room to improve and enhance the best practices.
+- As of =0.1= version, package is very basic and is not solving a big problem.
+- Thus lots to plans, and todo is shined to broaden the package usage.
+- So far, its in the vein of *suckless* philosophy.
